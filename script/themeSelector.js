@@ -1,10 +1,7 @@
-// TODO: implemet in-scheme variations; e.g. darker backgrounds
-// TODO: use css properties instead of setting node styles via js
-
 let colorSchemes = [
     {
         name: "purple",
-        bgImage: "img/backgrounds/purple.webp",
+        bgImage: "purple.webp",
         bgDarkCol: "#200050",
         bgLightCol: "#420069",
         borderCol: "#a010d2",
@@ -12,32 +9,34 @@ let colorSchemes = [
     },
     {
         name: "gold",
-        bgImage: "img/backgrounds/gold.webp",
+        bgImage: "gold.webp",
         bgDarkCol: "#493900",
         bgLightCol: "#8c6f09",
         borderCol: "#fcc90f",
         textCol: "#ffdda0"
+    },
+    {
+        name: "blue",
+        bgImage: "blue.webp",
+        bgDarkCol: "#022486",
+        bgLightCol: "#1a5090",
+        borderCol: "#41a2f0",
+        textCol: "#80cff0"
+    },
+    {
+        name: "red",
+        bgImage: "red.svg",
+        bgDarkCol: "#1a0005",
+        bgLightCol: "#350413",
+        borderCol: "#ff40af",
+        textCol: "#ff6b9f"
     }
 ];
 
 let scheme = colorSchemes[Math.floor((Math.random() * colorSchemes.length))];
-
-for(let elem of new Set([
-    ...document.getElementsByClassName("border"),
-    ...document.querySelectorAll("body,div,td")
-])) {
-    elem.style.border = `solid 2px ${scheme.borderCol}`;
-}
-
-// TODO: fix
-for(let elem of document.querySelectorAll("*")) {
-    if(!elem.style.color) {
-        elem.style.color = scheme.textCol;
-    }
-}
-
-document.querySelector("html").style.backgroundImage = `url("${scheme.bgImage}")`;
-
-let body = document.body.style;
-body.borderWidth = "4px";
-body.background = `radial-gradient(circle at 50% 50%, ${scheme.bgLightCol}, ${scheme.bgDarkCol} 90%)`;
+let root = document.documentElement.style;
+root.setProperty("--scheme-border-color", scheme.borderCol)
+root.setProperty("--scheme-text-color", scheme.textCol)
+root.setProperty("--scheme-bg-dark-color", scheme.bgDarkCol)
+root.setProperty("--scheme-bg-light-color", scheme.bgLightCol)
+root.setProperty("--scheme-bg-image", `url("img/background/${scheme.bgImage}")`)
