@@ -1,48 +1,44 @@
 @font-face {
     font-family: cascadiaCode;
-    src: url("res/font/cascadia_code.ttf")
+    src: url("font/cascadia_code.ttf")
 }
 
 @font-face {
     font-family: kingstone;
-    src: url("res/font/kingstone.ttf");
+    src: url("font/kingstone.ttf");
 }
 
 * {
     margin: 0;
     padding: 0;
-    color: white;
     font-family: cascadiaCode;
 }
 
 html {
-    background-color: black;
-    height: 100%;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 body {
-    background: radial-gradient(circle at 50% 50%, #420069 10%, #200050 90%);
-
     width: 96%;
-    height: 92.89%;
 
     padding: 7px;
     padding-top: 9px;
 
-    border: solid 4px #a010d2;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
-div {
-    border: solid 2px #a010d2;
+.widget {
     margin-top: -2px;
     padding: 4px;
 }
 
 h1 {
     font-family: kingstone;
+    color: red;
 }
 
 table {
@@ -51,6 +47,5 @@ table {
 }
 
 td {
-    border: solid 2px #a010d2;
     text-align: center;
 }
