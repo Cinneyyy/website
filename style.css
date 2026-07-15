@@ -26,8 +26,7 @@
 html {
     background-image: var(--scheme-bg-image);
     background-size: cover;
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
 
     display: flex;
     justify-content: center;
@@ -38,15 +37,14 @@ body {
     border: solid 4px var(--scheme-border-color);
 
     background: radial-gradient(circle at 50% 50%, var(--scheme-bg-light-color), var(--scheme-bg-dark-color) 90%);
-    background-repeat: no-repeat;
 
-    width: 96%;
+    width: 92%;
 
     padding: 7px;
     padding-top: 9px;
 
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .widget {
@@ -93,4 +91,24 @@ td {
     0% {
         transform: translate(-100%, 0);
     }
+}
+
+.socials-container {
+    display: flex;
+    width: 100%;
+}
+
+.socials {
+    height: 30px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1px;
+}
+
+.socials img {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
 }
