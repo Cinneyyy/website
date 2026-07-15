@@ -38,6 +38,7 @@ body {
     border: solid 4px var(--scheme-border-color);
 
     background: radial-gradient(circle at 50% 50%, var(--scheme-bg-light-color), var(--scheme-bg-dark-color) 90%);
+    background-repeat: no-repeat;
 
     width: 96%;
 
