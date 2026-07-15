@@ -30,6 +30,14 @@ let colorSchemes = [
         bgLightCol: "#350413",
         borderCol: "#ff40af",
         textCol: "#ff6b9f"
+    },
+    {
+        name: "grey",
+        bgImage: "grey.png",
+        bgDarkCol: "#101010",
+        bgLightCol: "#353535",
+        borderCol: "#bbbbbb",
+        textCol: "#bbbbbb"
     }
 ];
 
