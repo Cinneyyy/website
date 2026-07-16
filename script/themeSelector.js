@@ -42,6 +42,7 @@ let colorSchemes = [
 ];
 
 let scheme = colorSchemes[Math.floor((Math.random() * colorSchemes.length))];
+
 let root = document.documentElement.style;
 root.setProperty("--scheme-border-color", scheme.borderCol)
 root.setProperty("--scheme-text-color", scheme.textCol)
