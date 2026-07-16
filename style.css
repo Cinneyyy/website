@@ -151,7 +151,7 @@ td {
     margin-right: auto;
 }
 
-.grid > div {
+.grid > a {
     width: 95%;
     height: auto;
     max-width: 100%;
