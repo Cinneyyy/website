@@ -1,4 +1,4 @@
-let colorSchemes = [
+const colorSchemes = [
     {
         name: "purple",
         bgImage: "purple.webp",
@@ -33,7 +33,7 @@ let colorSchemes = [
     },
     {
         name: "grey",
-        bgImage: "grey.png",
+        bgImage: "grey.webp",
         bgDarkCol: "#101010",
         bgLightCol: "#353535",
         borderCol: "#bbbbbb",
@@ -41,11 +41,32 @@ let colorSchemes = [
     }
 ];
 
-let scheme = colorSchemes[Math.floor((Math.random() * colorSchemes.length))];
+const scheme = colorSchemes[Math.floor((Math.random() * colorSchemes.length))];
 
-let root = document.documentElement.style;
-root.setProperty("--scheme-border-color", scheme.borderCol)
-root.setProperty("--scheme-text-color", scheme.textCol)
-root.setProperty("--scheme-bg-dark-color", scheme.bgDarkCol)
-root.setProperty("--scheme-bg-light-color", scheme.bgLightCol)
-root.setProperty("--scheme-bg-image", `url("img/background/${scheme.bgImage}")`)
+const root = document.documentElement.style;
+root.setProperty("--scheme-border-color", scheme.borderCol);
+root.setProperty("--scheme-text-color", scheme.textCol);
+root.setProperty("--scheme-bg-dark-color", scheme.bgDarkCol);
+root.setProperty("--scheme-bg-light-color", scheme.bgLightCol);
+root.setProperty("--scheme-bg-image", `url("img/background/${scheme.bgImage}")`);
+
+const listStyles = [
+    ["disc", 1.25],
+    ["square", 1.25],
+    ["armenian", 2.25],
+    ["decimal", 2.1],
+    ["georgian", 1.75],
+    ["hebrew", 1.5],
+    ["lower-alpha", 1.25],
+    ["upper-alpha", 1.25],
+    ["lower-greek", 1.25],
+    ["lower-roman", 3],
+    ["upper-roman", 3],
+    ["hiragana", 1.5],
+    ["katakana", 1.5],
+    ["cjk-ideographic", 1.5]
+];
+
+const listStyle = listStyles[Math.floor(Math.random() * listStyles.length)];
+root.setProperty("--list-style", listStyle[0]);
+root.setProperty("--list-marker-width", `${listStyle[1]}em`);

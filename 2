@@ -39,7 +39,7 @@ a {
 html {
     background-image: var(--scheme-bg-image);
     background-size: cover;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
 
     display: flex;
     justify-content: center;
@@ -105,25 +105,17 @@ td {
 .pfp-widget {
     display: flex;
     align-items: stretch;
-    gap: 4px;
+    gap: 15px;
+}
+
+.pfp-widget > ul {
+    margin: 0;
 }
 
 .pfp-widget > img {
     --size: 270px;
     width: var(--size);
     height: var(--size);
-}
-
-.pfp-widget > div {
-    margin: 0px;
-    align-content: center;
-    padding-right: auto;
-    flex: 1;
-}
-
-.pfp-widget > div > ul {
-    margin: auto;
-    padding: 5px;
 }
 
 ul {
@@ -133,7 +125,7 @@ ul {
 
 li {
     margin: 0px;
-    line-height: 22.25px;
+    line-height: 23px;
     counter-increment: li_counter;
 }
 
