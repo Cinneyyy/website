@@ -50,6 +50,7 @@ root.setProperty("--scheme-bg-dark-color", scheme.bgDarkCol);
 root.setProperty("--scheme-bg-light-color", scheme.bgLightCol);
 root.setProperty("--scheme-bg-image", `url("img/background/${scheme.bgImage}")`);
 
+
 const listStyles = [
     ["disc", 1.25],
     ["square", 1.25],
