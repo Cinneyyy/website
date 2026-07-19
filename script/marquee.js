@@ -1,12 +1,10 @@
-// TODO: add more strings
 const strings = [
     "‼️ SITE UNDER CONSTRUCTION ‼️",
     ":3",
     "www.colin.monster",
     "<img src='img/pfp.png' style='width: 40px; height: 40px; margin-top: 5px; margin-right: 10px;'>".repeat(3),
     "Crazy? I was crazy once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazy. ".repeat(20),
-    "🐛🐛🐛🐛🐛🐛🐛🐛🐛🐛🐛🐛🐛🐛🐛🐛🐛",
-    "🎷🐠 🎷🐛 🎷🪱 🎷🐓"
+    "🎷🐈 🎷🦍 🎷🦓 🎷🐛 🎷🐇 🎷🐓 🎷🦜 🎷🐠 🎷🪱 🎷🐌"
 ];
 
 const seconds = 10;
@@ -26,7 +24,9 @@ function startMarquee(stringIndex) {
         while(stringIndex == lastIndex);
     }
 
+    lastIndex = stringIndex;
     element.innerHTML = strings[stringIndex];
+
     element.animate(
         [
             {

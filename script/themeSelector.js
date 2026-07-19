@@ -71,3 +71,12 @@ const listStyles = [
 const listStyle = listStyles[Math.floor(Math.random() * listStyles.length)];
 root.setProperty("--list-style", listStyle[0]);
 root.setProperty("--list-marker-width", `${listStyle[1]}em`);
+
+
+const fonts = [
+    "kingstone",
+    "papyrus",
+    "poland-canned-into-kaito"
+];
+
+root.setProperty("--waow-font", fonts[Math.floor(Math.random() * fonts.length)]);
