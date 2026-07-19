@@ -1,48 +1,56 @@
-const strings = [
-    "‼️ SITE UNDER CONSTRUCTION ‼️",
-    ":3",
-    "www.colin.monster",
-    "<img src='img/pfp.png' style='width: 40px; height: 40px; margin-top: 5px; margin-right: 10px;'>".repeat(3),
-    "Crazy? I was crazy once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazy. ".repeat(20),
-    "🎷🐈 🎷🦍 🎷🦓 🎷🐛 🎷🐇 🎷🐓 🎷🦜 🎷🐠 🎷🪱 🎷🐌"
-];
-
-const seconds = 10;
-const element = document.getElementById("marquee-content");
-
-let lastIndex = -1;
-
-function startMarquee(stringIndex) {
-    for(const anim of element.getAnimations()) {
-        anim.cancel();
+{
+    function image(src) {
+        return `<img src='${src}' style='width: 40px; height: 40px; margin-top: 5px; margin-right: 10px; image-rendering: pixelated;'>`;
     }
 
-    if(stringIndex == null) {
-        do {
-            stringIndex = Math.floor(Math.random() * strings.length);
+    const strings = [
+        "‼️ SITE UNDER CONSTRUCTION ‼️",
+        ":3",
+        "www.colin.monster",
+        image("img/pfp.png").repeat(3),
+        "Crazy? I was crazy once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazy. ".repeat(20),
+        "🎷🐈 🎷🦍 🎷🦓 🎷🐛 🎷🐇 🎷🐓 🎷🦜 🎷🐠 🎷🪱 🎷🐌",
+        "🏳️‍🌈🏳️‍⚧️",
+        ["rainbow", "bisexual", "transgender", "non_binary"].map(p => image(`img/pride/${p}.png`)).join("")
+    ];
+
+    const seconds = 10;
+    const element = document.getElementById("marquee-content");
+
+    let lastIndex = -1;
+
+    function startMarquee(stringIndex) {
+        for(const anim of element.getAnimations()) {
+            anim.cancel();
         }
-        while(stringIndex == lastIndex);
-    }
 
-    lastIndex = stringIndex;
-    element.innerHTML = strings[stringIndex];
-
-    element.animate(
-        [
-            {
-                transform: "translateX(-100%)"
-            },
-            {
-                transform: "translateX(0%)"
+        if(stringIndex == null) {
+            do {
+                stringIndex = Math.floor(Math.random() * strings.length);
             }
-        ],
-        {
-            duration: (seconds-1) * 1000,
-            iterations: 1,
-            easing: "linear"
+            while(stringIndex == lastIndex && strings.length > 1);
         }
-    )
-}
 
-startMarquee(0);
-setInterval(() => startMarquee(null), seconds * 1000);
+        lastIndex = stringIndex;
+        element.innerHTML = strings[stringIndex];
+
+        element.animate(
+            [
+                {
+                    transform: "translateX(-100%)"
+                },
+                {
+                    transform: "translateX(0%)"
+                }
+            ],
+            {
+                duration: (seconds-1) * 1000,
+                iterations: 1,
+                easing: "linear"
+            }
+        )
+    }
+
+    startMarquee(0);
+    setInterval(() => startMarquee(null), seconds * 1000);
+}
