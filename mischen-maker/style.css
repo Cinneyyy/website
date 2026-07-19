@@ -1,0 +1,11 @@
+.mischen-maker-ui {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.mischen-maker-ui > div {
+    width: 30%;
+    height: 500px;
+    margin: auto;
+}
