@@ -19,7 +19,7 @@ function startMarquee(stringIndex) {
         anim.cancel();
     }
 
-    if(!stringIndex) {
+    if(stringIndex == null) {
         do {
             stringIndex = Math.floor(Math.random() * strings.length);
         }
