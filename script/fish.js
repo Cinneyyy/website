@@ -12,9 +12,14 @@
             this.vel = vel;
             this.sineDev = sineDev;
             this.sineFreq = sineFreq;
+            this.sinePhase = Math.random() * Math.PI * 2;
             this.sineAxis = {
                 x: -vel.y,
                 y: vel.x
+            };
+            this.sineOffset = {
+                x: 0,
+                y: 0
             };
         }
 
@@ -29,13 +34,19 @@
                 || this.pos.y + this.size < 0;
         }
 
-        tick() {
+        tick(ticks) {
             this.pos.x += this.vel.x;
             this.pos.y += this.vel.y;
+
+            const sin = Math.sin((ticks - this.initTick) * this.sineFreq + this.sinePhase) * this.sineDev;
+            this.sineOffset = {
+                x: this.sineAxis.x * sin,
+                y: this.sineAxis.y * sin
+            }
         }
 
         draw() {
-            this.ctx.drawImage(this.img, this.pos.x, this.pos.y, this.size, this.size);
+            this.ctx.drawImage(this.img, this.pos.x + this.sineOffset.x, this.pos.y + this.sineOffset.y, this.size, this.size);
         }
     }
 
@@ -108,7 +119,7 @@
             }
 
             for(let i = 0; i < this.images.length; i++) {
-                this.images[i].tick();
+                this.images[i].tick(this.ticks);
 
                 if(this.images[i].remove()) {
                     this.images.splice(i, 1);
