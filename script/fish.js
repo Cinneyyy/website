@@ -75,7 +75,7 @@
             this.canvas.height = window.innerHeight;
         }
 
-        draw() {
+        draw(skipDraw) {
             for(let i = 0; i < this.params.length; i++) {
                 const param = this.params[i];
 
@@ -127,6 +127,11 @@
                 }
             }
 
+            this.ticks++;
+            if(skipDraw) {
+                return;
+            }
+
             if(this.isFg) {
                 this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
             }
@@ -144,8 +149,7 @@
                 this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
             }
 
-            this.ticks++;
-            window.requestAnimationFrame(() => this.draw());
+            window.requestAnimationFrame(() => this.draw(false));
         }
     }
 
@@ -165,33 +169,6 @@
         return lerp(Math.random(), minMax[0], minMax[1]);
     }
 
-    // const fishParamsBg = buildParams(
-    //     0.1,
-    //     { // x
-    //         min: -40,
-    //         max: -40
-    //     },
-    //     { // y
-    //         min: -40,
-    //         max: window.innerHeight
-    //     },
-    //     { // size
-    //         min: 25,
-    //         max: 40
-    //     },
-    //     { // vx
-    //         min: 10,
-    //         max: 20
-    //     },
-    //     { // vy
-    //         min: 0,
-    //         max: 0
-    //     },
-    //
-    //
-    //
-    // )
-
     // const param = {
     //     chance: 0,
     //     dist: [0, 0],
@@ -209,7 +186,9 @@
     //     imgSrc: ""
     // }
 
-    new Canvas("bg-canvas", false, [
+    const funnySine = Math.random() < 0.1;
+
+    const bgCanvas = new Canvas("bg-canvas", false, [
         // Bubbles 
         {
             chance: 0.03,
@@ -223,8 +202,8 @@
                 x: [0],
                 y: [-12, -17]
             },
-            sineDev: [150, 200],
-            sineFreq: [0.05, 0.05],
+            sineDev: funnySine ? [300] : [100, 150],
+            sineFreq: funnySine ? [0.07] : [0.008, 0.015],
             imgSrc: "/img/fish/bubble.png"
         },
         // Fish LtR
@@ -240,8 +219,8 @@
                 x: [15, 30],
                 y: [0]
             },
-            sineDev: [150, 200],
-            sineFreq: [0.05, 0.05],
+            sineDev: funnySine ? [200] : [20, 40],
+            sineFreq: funnySine ? [0.05] : [0.008, 0.015],
             imgSrc: "/img/fish/fish_right.png"
         },
         // Fish RtL
@@ -257,16 +236,16 @@
                 x: [-30, -15],
                 y: [0]
             },
-            sineDev: [150, 200],
-            sineFreq: [0.05, 0.05],
+            sineDev: funnySine ? [200] : [20, 40],
+            sineFreq: funnySine ? [0.05] : [0.008, 0.015],
             imgSrc: "/img/fish/fish_left.png"
         }
-    ]).draw();
+    ]);
 
-    new Canvas("fg-canvas", true, [
+    const fgCanvas = new Canvas("fg-canvas", true, [
         // Bubbles 
         {
-            chance: 0.007,
+            chance: 0.008,
             dist: [1.5, 4.5],
             size: [150, 200],
             pos: {
@@ -277,8 +256,8 @@
                 x: [0],
                 y: [-12, -17]
             },
-            sineDev: [150, 200],
-            sineFreq: [0.05, 0.05],
+            sineDev: funnySine ? [150] : [10, 25],
+            sineFreq: funnySine ? [0.01] : [0.004, 0.008],
             imgSrc: "/img/fish/bubble.png"
         },
         // Fish LtR
@@ -294,8 +273,8 @@
                 x: [15, 30],
                 y: [0]
             },
-            sineDev: [150, 200],
-            sineFreq: [0.05, 0.05],
+            sineDev: funnySine ? [150] : [5, 13],
+            sineFreq: funnySine ? [0.01] : [0.0025, 0.0065],
             imgSrc: "/img/fish/fish_right.png"
         },
         // Fish RtL
@@ -311,9 +290,20 @@
                 x: [-30, -15],
                 y: [0]
             },
-            sineDev: [150, 200],
-            sineFreq: [0.05, 0.05],
+            sineDev: funnySine ? [150] : [5, 13],
+            sineFreq: funnySine ? [0.01] : [0.0025, 0.0065],
             imgSrc: "/img/fish/fish_left.png"
         }
-    ]).draw();
+    ]);
+
+    const preSimulate = true;
+    if(preSimulate) {
+        for(let i = 0; i < 500; i++) {
+            bgCanvas.draw(true);
+            fgCanvas.draw(true);
+        }
+    }
+
+    bgCanvas.draw(false);
+    fgCanvas.draw(false);
 }
