@@ -32,3 +32,7 @@ body, .widget {
 h1, .helle-lachsfarbe {
     color: lightsalmon;
 }
+
+button {
+    font-weight: bold;
+}

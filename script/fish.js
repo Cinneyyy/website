@@ -307,3 +307,9 @@
     bgCanvas.draw(false);
     fgCanvas.draw(false);
 }
+
+function hideFishUi() {
+    document.getElementById('fish-ui').style.visibility = "hidden";
+    document.body.style.background = "unset";
+    document.body.style.border = "unset";
+}
