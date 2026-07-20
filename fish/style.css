@@ -29,6 +29,6 @@ body, .widget {
     font-variant-ligatures: none;
 }
 
-h1 {
+h1, .helle-lachsfarbe {
     color: lightsalmon;
 }
