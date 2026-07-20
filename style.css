@@ -134,7 +134,6 @@ button {
 .image-list-widget > div {
     margin: 0px;
     align-content: center;
-    padding-right: auto;
     flex: 1;
 }
 
