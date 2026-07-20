@@ -6,12 +6,29 @@
     z-index: -1;
 }
 
+#fg-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+.fg-canvas-wrapper {
+    pointer-events: none;
+}
+
 body, .widget {
-    border-color: lightsalmon;
-    background: #c04020;
+    border-color: lightskyblue;
+    background: midnightblue;
 }
 
 * {
-    color: lightsalmon;
+    color: darkturquoise;
     text-align: center;
+    font-variant-ligatures: none;
+}
+
+h1 {
+    color: lightsalmon;
 }

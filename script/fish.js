@@ -1,4 +1,17 @@
 {
+    const fgCanvas = document.getElementById("fg-canvas");
+    const fgCtx = fgCanvas.getContext("2d");
+
+    function fgResize() {
+        fgCanvas.width = window.innerWidth;
+        fgCanvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", fgResize);
+    fgResize();
+
+    fgCtx.clearRect(0, 0, fgCanvas.width, fgCanvas.height);
+
     const canvas = document.getElementById("bg-canvas");
     const ctx = canvas.getContext("2d");
 
