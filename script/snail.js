@@ -16,13 +16,15 @@ let makeSnailEepy = false;
     let canvasY = mouseY;
 
     const size = 100;
-    const displaySize = "35px";
+    const displaySize = 35;
     const speed = 0.01;
 
     canvas.width = size;
     canvas.height = size;
-    canvas.style.width = displaySize;
-    canvas.style.height = displaySize;
+
+    const displaySizePx = `${displaySize}px`;
+    canvas.style.width = displaySizePx;
+    canvas.style.height = displaySizePx;
 
     const image = new Image();
     image.src = "/img/snail.svg";
@@ -44,7 +46,7 @@ let makeSnailEepy = false;
             return;
         }
 
-        const dx = mouseX - canvasX;
+        const dx = mouseX - canvasX - displaySize/2;
         const dy = mouseY - canvasY;
 
         canvasX += dx * speed;

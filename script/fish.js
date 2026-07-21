@@ -186,7 +186,7 @@
     //     imgSrc: ""
     // }
 
-    const funnySine = Math.random() < 0.1;
+    const funnySine = Math.random() < 0.05;
 
     const bgCanvas = new Canvas("bg-canvas", false, [
         // Bubbles 
