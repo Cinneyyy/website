@@ -85,8 +85,6 @@ const root = document.documentElement.style;
         "papyrus",
         "poland-canned-into-kaito",
         "sabily",
-        "super-sliced",
-        "pickyside-grunge",
         "dazzle-ships"
     ];
 

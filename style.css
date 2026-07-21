@@ -24,16 +24,6 @@
 }
 
 @font-face {
-    font-family: super-sliced;
-    src: url("/font/super_sliced.ttf");
-}
-
-@font-face {
-    font-family: pickyside-grunge;
-    src: url("/font/pickyside_grunge.otf");
-}
-
-@font-face {
     font-family: dazzle-ships;
     src: url("/font/dazzle_ships.otf");
 }
