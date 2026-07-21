@@ -296,20 +296,12 @@
         }
     ]);
 
-    const preSimulate = true;
-    if(preSimulate) {
-        for(let i = 0; i < 500; i++) {
-            bgCanvas.draw(true);
-            fgCanvas.draw(true);
-        }
+    const preSimulation = 512;
+    for(let i = 0; i < preSimulation; i++) {
+        bgCanvas.draw(true);
+        fgCanvas.draw(true);
     }
 
     bgCanvas.draw(false);
     fgCanvas.draw(false);
-}
-
-function hideFishUi() {
-    document.getElementById('fish-ui').style.visibility = "hidden";
-    document.body.style.background = "unset";
-    document.body.style.border = "unset";
 }

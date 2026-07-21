@@ -6,9 +6,20 @@
         <link rel="stylesheet" href="/style.css">
         <link rel="stylesheet" href="style.css">
         <script src="/script/fish.js" defer></script>
+        <script src="/script/snail.js" defer></script>
+        <script>
+            function hideUi() {
+                document.getElementById('fish-ui').style.visibility = "hidden";
+                document.body.style.background = "unset";
+                document.body.style.border = "unset";
+
+                makeSnailEepy = true;
+            }
+        </script>
     </head>
     <body>
         <canvas id="bg-canvas"></canvas>
+        <canvas id="fg-canvas"></canvas>
         <div id="fish-ui">
             <div class="widget">
                 <h1>🐟🐟🐟 ℌ𝔢𝔩𝔩𝔢 𝔏𝔞𝔠𝔥𝔰𝔣𝔞𝔯𝔟𝔢 🐟🐟🐟</h1>
@@ -17,11 +28,8 @@
                 <a href="/" class="underline">Back to homepage.</a>
             </div>
             <div class="widget">
-                <button onclick="hideFishUi();" class="underline">Hide UI.</button>
+                <button onclick="hideUi();" class="underline">Hide UI.</button>
             </div>
-        </div>
-        <div class="fg-canvas-wrapper">
-            <canvas id="fg-canvas"></canvas>
         </div>
         <!-- <div class="widget"> -->
         <!--     <p><span class="helle-lachsfarbe">ℌ𝔢𝔩𝔩𝔢 𝔏𝔞𝔠𝔥𝔰𝔣𝔞𝔯𝔟𝔢</span>... Did I ever tell you about <span class="helle-lachsfarbe">ℌ𝔢𝔩𝔩𝔢 𝔏𝔞𝔠𝔥𝔰𝔣𝔞𝔯𝔟𝔢</span></p> -->

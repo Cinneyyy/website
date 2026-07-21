@@ -14,7 +14,7 @@
     z-index: 1;
 }
 
-.fg-canvas-wrapper {
+canvas {
     pointer-events: none;
 }
 

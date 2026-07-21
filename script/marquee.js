@@ -6,12 +6,16 @@
     const strings = [
         "‼️ SITE UNDER CONSTRUCTION ‼️",
         ":3",
-        "www.colin.monster",
+        "<a href='/'>www.colin.monster</a>",
         image("img/pfp.png").repeat(3),
-        "Crazy? I was crazy once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazy. ".repeat(20),
+        "Crazy? I was crazy once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazy. ".repeat(12), // 12, underrated number btw
         "🎷🐈 🎷🦍 🎷🦓 🎷🐛 🎷🐇 🎷🐓 🎷🦜 🎷🐠 🎷🪱 🎷🐌",
         "🏳️‍🌈🏳️‍⚧️",
-        ["rainbow", "bisexual", "transgender", "non_binary"].map(p => image(`img/pride/${p}.png`)).join("")
+        ["rainbow", "bisexual", "transgender", "non_binary"].map(p => image(`img/pride/${p}.png`)).join(""),
+        "Rock and Stone!",
+        "No mind to think.",
+        "Despite everything, it's still you.",
+        "I'm the original&emsp;&emsp;&emsp;<span style='color: yellow;'>Starwalker.</span>"
     ];
 
     const seconds = 10;
