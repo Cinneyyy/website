@@ -83,7 +83,11 @@ const root = document.documentElement.style;
     const waowFonts = [
         "kingstone",
         "papyrus",
-        "poland-canned-into-kaito"
+        "poland-canned-into-kaito",
+        "sabily",
+        "super-sliced",
+        "pickyside-grunge",
+        "dazzle-ships"
     ];
 
     root.setProperty("--waow-font", waowFonts[Math.floor(Math.random() * waowFonts.length)]);

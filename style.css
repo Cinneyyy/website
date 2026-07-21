@@ -1,21 +1,41 @@
 @font-face {
     font-family: cascadia-code;
-    src: url("font/cascadia_code.ttf")
+    src: url("/font/cascadia_code.ttf")
 }
 
 @font-face {
     font-family: kingstone;
-    src: url("font/kingstone.ttf");
+    src: url("/font/kingstone.ttf");
 }
 
 @font-face {
     font-family: papyrus;
-    src: url("font/papyrus.ttf");
+    src: url("/font/papyrus.ttf");
 }
 
 @font-face {
     font-family: poland-canned-into-kaito;
-    src: url("font/poland_canned_into_kaito.otf");
+    src: url("/font/poland_canned_into_kaito.otf");
+}
+
+@font-face {
+    font-family: sabily;
+    src: url("/font/sabily.ttf");
+}
+
+@font-face {
+    font-family: super-sliced;
+    src: url("/font/super_sliced.ttf");
+}
+
+@font-face {
+    font-family: pickyside-grunge;
+    src: url("/font/pickyside_grunge.otf");
+}
+
+@font-face {
+    font-family: dazzle-ships;
+    src: url("/font/dazzle_ships.otf");
 }
 
 :root {
@@ -23,7 +43,7 @@
     --scheme-text-color: white;
     --scheme-bg-dark-color: black;
     --scheme-bg-light-color: black;
-    --scheme-bg-image: url(""); 
+    --scheme-bg-image: none; 
     --list-style: square;
     --list-marker-width: 0em;
     --waow-font: papyrus;
@@ -166,6 +186,8 @@ li {
     align-items: center;
     justify-content: center;
     margin: 1px;
+    font-size: 2vh;
+    text-wrap-mode: nowrap;
 }
 
 .socials-link > img {
