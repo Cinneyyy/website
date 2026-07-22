@@ -22,9 +22,9 @@ let makeSnailEepy = false;
     canvas.width = size;
     canvas.height = size;
 
-    const displaySizePx = `${displaySize}px`;
-    canvas.style.width = displaySizePx;
-    canvas.style.height = displaySizePx;
+    const displaySizeCss = `${displaySize}px`;
+    canvas.style.width = displaySizeCss;
+    canvas.style.height = displaySizeCss;
 
     const image = new Image();
     image.src = "/img/snail.svg";
