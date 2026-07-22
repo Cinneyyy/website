@@ -1,0 +1,7 @@
+{
+    "headers": {
+        "/.well-known/matrix/*": {
+            "Content-Type": "application/json"
+        }
+    }
+}
